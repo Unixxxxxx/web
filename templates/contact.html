@@ -1,34 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block Contact%}
-  <!-- Contact Section -->
-  <section class="bg-cover bg-center h-screen" style="background-image: url('static/media/n.jpg');">
-    <div class="bg-black bg-opacity-50 h-full flex items-center justify-center">
-      <div class="container mx-auto px-6 py-12 md:px-12 lg:px-24">
-        <div class="bg-white bg-opacity-90 rounded-lg shadow-lg p-8 lg:p-12">
-          <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Contact Us</h2>
-          <form action="#" method="POST" class="space-y-6">
-            {% csrf_token %}
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                <input type="text" name="name" id="name" class="mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
-              </div>
-              <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" name="email" id="email" class="mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
-              </div>
+{% block content %}  <!-- Change from 'Service' to 'content' for standardization -->
+<section class="bg-gray-100 py-12">
+  <div class="container mx-auto px-6 md:px-12 lg:px-24">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Our Services</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      {% for service in services %}
+        {% if service.link_url_name %}
+          <a href="{% url service.link_url_name %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
+        {% else %}
+          <a href="#" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
+        {% endif %}
+            <img src="{{ service.image.url }}" alt="{{ service.title }}" class="h-64 w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">{{ service.title }}</h3>
+              <p class="text-gray-700">{{ service.description }}</p>
             </div>
-            <div>
-              <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-              <textarea name="message" id="message" rows="4" class="mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
-            </div>
-            <div class="text-center">
-              <button type="submit" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-800 transition duration-300">Send Message</button>
-            </div>
-          </form>
-        </div>
-      </div>
+          </a>
+      {% endfor %}
     </div>
-  </section>
-{% endblock Contact %}
+  </div>
+</section>
+{% endblock %}

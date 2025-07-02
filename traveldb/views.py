@@ -1,15 +1,26 @@
 from django.shortcuts import render, redirect
+from .models import Service 
+from .forms import ContactForm
+
 def home(request):
     return render(request,'home.html',{})
 
 def contact(request):
-    return render(request,'contact.html', {})
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('contact')  # Redirect after successful submission
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
 
 def About(request):
     return render(request,'About.html', {})
 
-def Services(request):
-    return render(request,'Services.html', {})
+def services_view(request):
+    services = Service.objects.all()
+    return render(request, 'Services.html', {'services': services})
 
 # component
 def ne(request):

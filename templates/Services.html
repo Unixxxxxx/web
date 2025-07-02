@@ -1,126 +1,24 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block Service %}
-<!-- Services Section -->
 <section class="bg-gray-100 py-12">
-    <div class="container mx-auto px-6 md:px-12 lg:px-24">
-      <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Our Services</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-        <!-- Service 1 -->
-        <a href="{% url 'home' %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
-          <img src="static/media/new.jpg" alt="Service 1" class="h-64 w-full object-cover">
+  <div class="container mx-auto px-6 md:px-12 lg:px-24">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Our Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      {% for service in services %}
+        {% if service.link_url_name %}
+        <a href="{% url service.link_url_name %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
+        {% else %}
+        <a href="#" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
+        {% endif %}
+          <img src="{{ service.image.url }}" alt="{{ service.title }}" class="h-64 w-full object-cover">
           <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Chardham Packages</h3>
-            <p class="text-gray-700">Description for service one. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3 class="text-xl font-bold mb-2">{{ service.title }}</h3>
+            <p class="text-gray-700">{{ service.description }}</p>
           </div>
         </a>
-        <!-- Service 2 -->
-        <a href="{% url 'ne' %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
-          <img src="static/media/new2.jpg" alt="Service 2" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Kedarnath Packages</h3>
-            <p class="text-gray-700">Description for service two. Mauris semper ligula vitae mauris ultricies, nec lacinia dui varius.</p>
-          </div>
-        </a>
-        <!-- Service 3 -->
-        <a href="{% url 'contact' %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
-          <img src="static/media/new2.jpg" alt="Service 3" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Vishno Devi Packages</h3>
-            <p class="text-gray-700">Description for service three. Fusce venenatis enim non est aliquet, sit amet congue odio mattis.</p>
-          </div>
-        </a>
-        <!-- Service 4 -->
-        <a href="{% url 'home' %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
-          <img src="static/media/keshmir.jpg" alt="Service 4" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Amarnath Packages</h3>
-            <p class="text-gray-700">Description for service four. Nulla lacinia vestibulum lacus, ac placerat nunc vestibulum id.</p>
-          </div>
-        </a>
-        <!-- Service 5 -->
-        <a href="{% url 'home' %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
-          <img src="static/media/imag01.jpg.jpg" alt="Service 5" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">12 Jyotilingas Packages</h3>
-            <p class="text-gray-700">Description for service five. Nam vitae dui at enim efficitur lacinia. Sed condimentum feugiat odio.</p>
-          </div>
-        </a>
-        <!-- Service 6 -->
-        <a href="{% url 'home' %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
-          <img src="static/media/new.jpg" alt="Service 6" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Uttrakhand Packages</h3>
-            <p class="text-gray-700">Description for service six. Duis imperdiet orci nec velit rutrum aliquet. Sed fermentum ante at nisl fermentum.</p>
-          </div>
-        </a>  
-        <!-- Service 7 -->
-        <a href="{% url 'home' %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
-          <img src="static/media/imag01.jpg.jpg" alt="Service 5" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Kashmir Packages</h3>
-            <p class="text-gray-700">Description for service five. Nam vitae dui at enim efficitur lacinia. Sed condimentum feugiat odio.</p>
-          </div>
-        </a>
-        <a href="{% url 'ne' %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
-          <img src="static/media/new2.jpg" alt="Service 2" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">South Indian Tour Packages</h3>
-            <p class="text-gray-700">Description for service two. Mauris semper ligula vitae mauris ultricies, nec lacinia dui varius.</p>
-          </div>
-        </a>
-        <a href="{% url 'ne' %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
-          <img src="static/media/new2.jpg" alt="Service 2" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">west India Packages</h3>
-            <p class="text-gray-700">Description for service two. Mauris semper ligula vitae mauris ultricies, nec lacinia dui varius.</p>
-          </div>
-        </a>
-
-        <a href="{% url 'ne' %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
-          <img src="static/media/new2.jpg" alt="Service 2" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Offer's and Discounts </h3>
-            <p class="text-gray-700">Description for service two. Mauris semper ligula vitae mauris ultricies, nec lacinia dui varius.</p>
-          </div>
-        </a>
-        <a href="{% url 'ne' %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
-          <img src="static/media/new2.jpg" alt="Service 2" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Home page </h3>
-            <p class="text-gray-700">Description for service two. Mauris semper ligula vitae mauris ultricies, nec lacinia dui varius.</p>
-          </div>
-        </a>
-        <a href="{% url 'ne' %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
-          <img src="static/media/new2.jpg" alt="Service 2" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">contact and Query form</h3>
-            <p class="text-gray-700">Description for service two. Mauris semper ligula vitae mauris ultricies, nec lacinia dui varius.</p>
-          </div>
-        </a>
-        {% comment %} last row {% endcomment %}
-        <a href="{% url 'ne' %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
-          <img src="static/media/new2.jpg" alt="Service 2" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Privacy And Tearms and Conditions</h3>
-            <p class="text-gray-700">Description for service two. Mauris semper ligula vitae mauris ultricies, nec lacinia dui varius.</p>
-          </div>
-        </a>
-        <a href="{% url 'ne' %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
-          <img src="static/media/new2.jpg" alt="Service 2" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Transport Sections Plan </h3>
-            <p class="text-gray-700">Description for service two. Mauris semper ligula vitae mauris ultricies, nec lacinia dui varius.</p>
-          </div>
-        </a>
-        <a href="{% url 'ne' %}" class="block bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 hover:shadow-lg">
-          <img src="static/media/new2.jpg" alt="Service 2" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">India Packages</h3>
-            <p class="text-gray-700">Description for service two. Mauris semper ligula vitae mauris ultricies, nec lacinia dui varius.</p>
-          </div>
-        </a>
-      </div>
+      {% endfor %}
     </div>
-  </section>
-  {% endblock Service %}
+  </div>
+</section>
+{% endblock Service %}
