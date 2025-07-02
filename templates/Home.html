@@ -1,0 +1,279 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  
+  <!-- Poster Section -->
+<section class="bg-cover bg-center h-screen text-white" style="background-image: url('static/media/new.jpg');">
+  <div class="container mx-auto flex items-center justify-center h-full">
+    <div class="bg-black bg-opacity-70 p-8 rounded-lg text-center">
+      <h1 class="text-5xl font-bold mb-4">Kedarnath Packages</h1>
+      <strong class="text-2xl mb-4">Kedarnath is a renowned pilgrimage site located in the Indian state of Uttarakhand.</strong>
+      <div class="flex justify-center space-x-4">
+        <a href="{% url 'Services' %}" class="bg-blue-600 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded">Learn More</a>
+        <a href="{% url 'ne' %}" class="bg-green-600 hover:bg-green-800 text-white font-semibold py-3 px-6 rounded">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Four Poster Section with Background Image -->
+<section class="bg-cover bg-center bg-gray-100 py-12" style="background-image: url('static/media/imag01.jpg.jpg');">
+  <div class="container mx-auto px-6 md:px-12">
+    <h2 class="text-4xl font-bold text-center text-white mb-12">Offer's and Discounts</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Poster 1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+        <img src="static/media/new3.jpg" alt="Feature 1" class="h-40 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">Offer's</h3>
+          <strong class="text-gray-700 mb-4">Discount: Get up to 20% off on early bookings.</strong>
+          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+        </div>
+      </div>
+      <!-- Poster 2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+        <img src="static/media/new4.jpg" alt="Feature 2" class="h-40 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">Feature Two</h3>
+          <p class="text-gray-700 mb-4">Details: Plan your trip ahead of time and enjoy substantial savings on accommodation and travel packages.</p>
+          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+        </div>
+      </div>
+      <!-- Poster 3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+        <img src="static/media/new1.jpg" alt="Feature 3" class="h-40 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">Feature Three</h3>
+          <p class="text-gray-700 mb-4">Monsoon Madness: Special Deals for the Adventurous Souls</p>
+          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+        </div>
+      </div>
+      <!-- Poster 4 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+        <img src="static/media/new1.jpg" alt="Feature 4" class="h-40 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">Feature Four</h3>
+          <strong class="text-gray-700 mb-4">Senior Citizen Special: Honor the Elderly with Extra Savings</strong >
+          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Four Poster Section with Background Image section1-->
+<section class="bg-cover bg-center bg-gray-100 py-12" style="background-image: url('static/media/ne.jpg');">
+  <div class="container mx-auto px-6 md:px-12">
+    <h2 class="text-4xl font-bold text-center text-white mb-12">Retreats: Rejuvenating</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Poster 1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+        <img src="static/media/new3.jpg" alt="Feature 1" class="h-40 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">Family Package: A Memorable Pilgrimage for Your Loved Ones</h3>
+          <p class="text-gray-700 mb-4">$</p>
+          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+        </div>
+      </div>
+      <!-- Poster 2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+        <img src="static/media/new.jpg" alt="Feature 2" class="h-40 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">Feature Two</h3>
+          <p class="text-gray-700 mb-4">Pilgrim Loyalty Program: Rewards for Our Devoted Pilgrims</p>
+          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+        </div>
+      </div>
+      <!-- Poster 3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+        <img src="static/media/new2.jpg" alt="Feature 3" class="h-40 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">Spiritual Enrichment:</h3>
+          <p class="text-gray-700 mb-4">Book Now and Experience the Divine Bliss of Kedarnath Yatra!</p>
+          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+        </div>
+      </div>
+      <!-- Poster 4 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+        <img src="static/media/new.jpg" alt="Feature 4" class="h-40 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">FOur Featured Pilgrimages</h3>
+          <p class="text-gray-700 mb-4">$</p>
+          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Four Poster Section -->
+<section class="bg-gray-100 py-12">
+  <div class="container mx-auto px-6 md:px-12">
+    <h2 class="text-4xl font-bold text-center mb-12">Spiritual: Enriching</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Poster 1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+        <img src="static/media/new.jpg" alt="Feature 1" class="h-40 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">Book Your Spiritual Journey Today!</h3>
+          <p class="text-gray-700 mb-4">#</p>
+          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+        </div>
+      </div>
+      <!-- Poster 2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+        <img src="static/media/new2.jpg" alt="Feature 2" class="h-40 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">Early Bird Offer: Book in Advance and Save Big!</h3>
+          <p class="text-gray-700 mb-4">#</p>
+          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+        </div>
+      </div>
+      <!-- Poster 3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+        <img src="static/media/new3.jpg" alt="Feature 3" class="h-40 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">Feature Three</h3>
+          <p class="text-gray-700 mb-4">#</p>
+          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+        </div>
+      </div>
+      <!-- Poster 4 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+        <img src="static/media/new4.jpg" alt="Feature 4" class="h-40 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2">Discount: Up to 30% off during the monsoon season (July to August)</h3>
+          <p class="text-gray-700 mb-4">$</p>
+          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Custom Styles for Scrollbar -->
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+</style>\
+
+{% comment %} <!-- Poster Section with Inline Scrolling and Background Image  lat -->
+<section class="bg-cover bg-center bg-fixed py-12" style="background-image: url('static/media/imag01.jpg.jpg');">
+  <div class="bg-black bg-opacity-50 py-12">
+    <div class="container mx-auto px-6 md:px-12">
+      <h2 class="text-4xl font-bold text-center text-white mb-12">Our Key Features</h2>
+      <div class="flex space-x-8 overflow-x-scroll scrolling-touch scrollbar-hide">
+        <!-- Poster 1 -->
+        <div class="min-w-[300px] bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+          <img src="static/media/new.jpg" alt="Feature 1" class="h-40 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2">Feature One</h3>
+            <p class="text-gray-700 mb-4">Description for feature one. This is a brief description highlighting the main point of the feature.</p>
+            <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+          </div>
+        </div>
+        <!-- Poster 2 -->
+        <div class="min-w-[300px] bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+          <img src="static/media/new.jpg" alt="Feature 2" class="h-40 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2">Feature Two</h3>
+            <p class="text-gray-700 mb-4">Description for feature two. This is a brief description highlighting the main point of the feature.</p>
+            <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+          </div>
+        </div>
+        <!-- Poster 3 -->
+        <div class="min-w-[300px] bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+          <img src="static/media/new.jpg" alt="Feature 3" class="h-40 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2">Feature Three</h3>
+            <p class="text-gray-700 mb-4">Description for feature three. This is a brief description highlighting the main point of the feature.</p>
+            <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+          </div>
+        </div> {% endcomment %}
+        {% comment %} <!-- Poster 4 -->
+        <div class="min-w-[300px] bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+          <img src="static/media/feature4.jpg" alt="Feature 4" class="h-40 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2">Feature Four</h3>
+            <p class="text-gray-700 mb-4">Description for feature four. This is a brief description highlighting the main point of the feature.</p>
+            <a href="#" class="text-blue-600 hover:underline">Learn More</a>
+          </div>
+        </div>
+        <!-- Poster 5 -->
+        <div class="min-w-[300px] bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
+          <img src="static/media/feature5.jpg" alt="Feature 5" class="h-40 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2">Feature Five</h3>
+            <p class="text-gray-700 mb-4">Description for feature five. This is a brief description highlighting the main point of the feature.</p>
+            <a href="#" class="text-blue-600 hover:underline">Learn More</a>
+          </div>
+        </div> {% endcomment %}
+        <!-- Poster 6 -->
+        
+      {% comment %} </div>
+    </div>
+  </div>
+</section> {% endcomment %}
+
+<!-- Custom Styles for Scrollbar -->
+{% comment %} <style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+</style> {% endcomment %}
+
+
+
+
+
+<!-- Enhanced Section -->
+{% comment %} <section class="bg-cover bg-center h-screen text-white" style="background-image: url('static/media/new4.jpg');">
+  <div class="container mx-auto flex items-center justify-center h-full">
+    <div class="bg-black bg-opacity-70 p-8 rounded-lg text-center w-full">
+      <h1 class="text-5xl font-bold mb-8">Discover Our Amazing Features</h1>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Column 1 -->
+        <div class="bg-white bg-opacity-90 p-6 rounded-lg text-black">
+          <div class="h-40 bg-gray-500 rounded mb-4 flex items-center justify-center overflow-hidden">
+            <img src="{% static 'media/new.jpg' %}" alt="Image 1" class="h-full w-full object-cover rounded">
+          </div>
+          <h2 class="text-2xl font-bold mb-2">Column 1</h2>
+          <p class="text-gray-700">Description for column 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+        </div>
+        <!-- Column 2 -->
+        <div class="bg-white bg-opacity-90 p-6 rounded-lg text-black">
+          <div class="h-40 bg-gray-300 rounded mb-4 flex items-center justify-center overflow-hidden">
+            <img src="static/media/new.jpg" alt="Image 2" class="h-full w-full object-cover rounded">
+          </div>
+          <h2 class="text-2xl font-bold mb-2">Column 2</h2>
+          <p class="text-gray-700">Description for column 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+        </div>
+        <!-- Column 3 -->
+        <div class="bg-white bg-opacity-90 p-6 rounded-lg text-black">
+          <div class="h-40 bg-gray-300 rounded mb-4 flex items-center justify-center overflow-hidden">
+            <img src="static/media/new.jpg" alt="Image 3" class="h-full w-full object-cover rounded">
+          </div>
+          <h2 class="text-2xl font-bold mb-2">Column 3</h2>
+          <p class="text-gray-700">Description for column 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> {% endcomment %}
+
+
+  {% endblock %}
+
+
+

@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block About %}
+  <!-- About Us Section -->
+  <section class="bg-gray-100 py-12">
+    <div class="container mx-auto px-6 md:px-12 lg:px-24">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="max-w-md">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">About Us</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">Expertise and Experience:</p>
+          <p class="text-gray-700 leading-relaxed mb-6">Benefit from our [number] years of industry experience and a team of travel experts who are passionate about curating seamless travel experiences.</p>
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Global Network:</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">Access our extensive network of partners and suppliers worldwide, ensuring exclusive access to top destinations, accommodations, and experiences.</p>
+        </div>
+        <div class="flex justify-center">
+          <img src="static/media/new.jpg" alt="About Us Image" class="rounded-lg shadow-md">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Styles for Responsive Image -->
+  <style>
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+{% endblock About %}

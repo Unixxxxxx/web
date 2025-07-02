@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block ne %}
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-blue-900 text-white py-4">
+      <div class="container mx-auto px-4">
+        <h1 class="text-3xl font-bold">Kedarnath Yatra</h1>
+      </div>
+    </header>
+  
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">About Kedarnath Yatra</h2>
+        <p class="mb-4">
+          The Kedarnath Yatra is one of the most revered pilgrimages in Hinduism. Located in the Indian state of Uttarakhand, Kedarnath Temple is dedicated to Lord Shiva and is one of the twelve Jyotirlingas. The temple is situated at an altitude of 3,583 meters (11,755 feet) above sea level, near the Mandakini River.
+        </p>
+        <p class="mb-4">
+          The yatra typically takes place from April to November, during which thousands of devotees undertake the challenging trek to seek blessings from Lord Shiva. The temple remains closed during the winter months due to heavy snowfall.
+        </p>
+      </section>
+  
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">Travel Tips</h2>
+        <ul class="list-disc pl-6 mb-4">
+          <li>Ensure you are physically fit for the trek, as the journey can be strenuous.</li>
+          <li>Carry warm clothing, as temperatures can drop significantly, especially at night.</li>
+          <li>Book your accommodation in advance to avoid last-minute hassles.</li>
+          <li>Stay hydrated and carry sufficient water and snacks for the trek.</li>
+          <li>Respect the local customs and traditions while visiting the temple.</li>
+        </ul>
+      </section>
+  
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">Image Gallery</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img src="static/media/new1.jpg" alt="Kedarnath Temple" class="h-64 w-full object-cover">
+          </div>
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img src="static/media/new2.jpg" alt="Kedarnath Trek" class="h-64 w-full object-cover">
+          </div>
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img src="static/media/new.jpg" alt="Scenic View" class="h-64 w-full object-cover">
+          </div>
+        </div>
+      </section>
+    </main>
+{% endblock ne %}
