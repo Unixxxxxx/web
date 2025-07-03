@@ -1,50 +1,76 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block ne %}
-<body class="bg-gray-100 text-gray-900">
+<body class="bg-gray-50 text-gray-900">
 
-    <!-- Header -->
-    <header class="bg-blue-900 text-white py-4">
-      <div class="container mx-auto px-4">
-        <h1 class="text-3xl font-bold">Kedarnath Yatra</h1>
+  <!-- Header -->
+  <header class="bg-red-700 text-white shadow-lg py-5">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-3xl font-extrabold tracking-wide">Ganesh Puja</h1>
+      <a href="{% url 'contact' %}" class="hidden sm:inline-block bg-white text-red-700 px-4 py-2 rounded-lg font-semibold hover:bg-red-100 transition">
+        Book Pandit
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-10 space-y-16">
+
+    <!-- About Section -->
+    <section>
+      <h2 class="text-3xl font-bold text-center text-red-700 mb-6">About Ganesh Puja</h2>
+      <div class="text-lg text-gray-700 space-y-4 leading-relaxed max-w-3xl mx-auto text-center">
+        <p>Ganesh Puja, also known as Ganesh Chaturthi, honors Lord Ganesha — the remover of obstacles and the god of wisdom, prosperity, and new beginnings.</p>
+        <p>Celebrated especially in Maharashtra, Odisha, and Karnataka, this vibrant festival involves placing Ganesha idols in homes and community spaces, offering prayers, chanting mantras, and enjoying cultural performances.</p>
+        <p>The festivities end with idol immersion (Visarjan), accompanied by joyful chants of <span class="font-semibold text-red-600">"Ganpati Bappa Morya!"</span>.</p>
       </div>
-    </header>
-  
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold mb-4">About Kedarnath Yatra</h2>
-        <p class="mb-4">
-          The Kedarnath Yatra is one of the most revered pilgrimages in Hinduism. Located in the Indian state of Uttarakhand, Kedarnath Temple is dedicated to Lord Shiva and is one of the twelve Jyotirlingas. The temple is situated at an altitude of 3,583 meters (11,755 feet) above sea level, near the Mandakini River.
-        </p>
-        <p class="mb-4">
-          The yatra typically takes place from April to November, during which thousands of devotees undertake the challenging trek to seek blessings from Lord Shiva. The temple remains closed during the winter months due to heavy snowfall.
-        </p>
-      </section>
-  
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold mb-4">Travel Tips</h2>
-        <ul class="list-disc pl-6 mb-4">
-          <li>Ensure you are physically fit for the trek, as the journey can be strenuous.</li>
-          <li>Carry warm clothing, as temperatures can drop significantly, especially at night.</li>
-          <li>Book your accommodation in advance to avoid last-minute hassles.</li>
-          <li>Stay hydrated and carry sufficient water and snacks for the trek.</li>
-          <li>Respect the local customs and traditions while visiting the temple.</li>
+    </section>
+
+    <!-- Puja Tips Section -->
+    <section>
+      <h2 class="text-3xl font-bold text-center text-red-700 mb-6">Puja Preparation Tips</h2>
+      <div class="max-w-2xl mx-auto text-gray-700 text-base sm:text-lg">
+        <ul class="list-disc list-inside space-y-2">
+          <li>Clean the home and puja area thoroughly before the ceremony.</li>
+          <li>Opt for eco-friendly Ganesh idols to protect the environment.</li>
+          <li>Decorate with traditional rangoli, marigolds, and lights.</li>
+          <li>Offer modaks, laddus, durva grass, and red flowers to Lord Ganesha.</li>
+          <li>Recite Ganesh aartis and mantras daily during the puja period.</li>
         </ul>
-      </section>
-  
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold mb-4">Image Gallery</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="static/media/new1.jpg" alt="Kedarnath Temple" class="h-64 w-full object-cover">
-          </div>
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="static/media/new2.jpg" alt="Kedarnath Trek" class="h-64 w-full object-cover">
-          </div>
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="static/media/new.jpg" alt="Scenic View" class="h-64 w-full object-cover">
-          </div>
+      </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section>
+      <h2 class="text-3xl font-bold text-center text-red-700 mb-8">Ganesh Puja Moments</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+          <img src="{% static 'media/new.jpg' %}" alt="Ganesh Idol" class="w-full h-64 object-cover">
         </div>
-      </section>
-    </main>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+          <img src="{% static 'media/new.jpg' %}" alt="Puja Rituals" class="w-full h-64 object-cover">
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+          <img src="{% static 'media/new.jpg' %}" alt="Devotees Celebrating" class="w-full h-64 object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="text-center">
+      <a href="{% url 'contact' %}" class="inline-block bg-red-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-red-700 transition duration-300">
+        Book a Pandit for Ganesh Puja →
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Optional Footer -->
+  {% comment %} <footer class="bg-gray-200 py-6 mt-16">
+    <div class="text-center text-gray-600 text-sm">
+      &copy; {{ current_year }} Ganesh Puja Services. 
+    </div>
+  </footer> {% endcomment %}
+
+</body>
 {% endblock ne %}

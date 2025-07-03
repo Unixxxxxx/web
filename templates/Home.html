@@ -1,279 +1,109 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-  
-  <!-- Poster Section -->
-<section class="bg-cover bg-center h-screen text-white" style="background-image: url('static/media/new.jpg');">
-  <div class="container mx-auto flex items-center justify-center h-full">
-    <div class="bg-black bg-opacity-70 p-8 rounded-lg text-center">
-      <h1 class="text-5xl font-bold mb-4">Kedarnath Packages</h1>
-      <strong class="text-2xl mb-4">Kedarnath is a renowned pilgrimage site located in the Indian state of Uttarakhand.</strong>
-      <div class="flex justify-center space-x-4">
+
+<!-- Hero Section -->
+<section class="bg-cover bg-center h-screen text-white" style="background-image: url('{% static 'media/new.jpg' %}');">
+  <div class="container mx-auto flex items-center justify-center h-full px-4">
+    <div class="bg-black bg-opacity-70 p-8 rounded-lg text-center w-full max-w-2xl">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Book Pandit Ji for All Hindu Pujas – Anywhere, Anytime</h1>
+      <p class="text-lg md:text-2xl mb-6">Embark on a spiritually enriching journey with our expert Pandit Ji Booking Services for all major Hindu rituals and pujas.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="{% url 'Services' %}" class="bg-blue-600 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded">Learn More</a>
         <a href="{% url 'ne' %}" class="bg-green-600 hover:bg-green-800 text-white font-semibold py-3 px-6 rounded">Get Started</a>
       </div>
     </div>
   </div>
 </section>
-<!-- Four Poster Section with Background Image -->
-<section class="bg-cover bg-center bg-gray-100 py-12" style="background-image: url('static/media/imag01.jpg.jpg');">
-  <div class="container mx-auto px-6 md:px-12">
-    <h2 class="text-4xl font-bold text-center text-white mb-12">Offer's and Discounts</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <!-- Poster 1 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-        <img src="static/media/new3.jpg" alt="Feature 1" class="h-40 w-full object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-bold mb-2">Offer's</h3>
-          <strong class="text-gray-700 mb-4">Discount: Get up to 20% off on early bookings.</strong>
-          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
-        </div>
-      </div>
-      <!-- Poster 2 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-        <img src="static/media/new4.jpg" alt="Feature 2" class="h-40 w-full object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-bold mb-2">Feature Two</h3>
-          <p class="text-gray-700 mb-4">Details: Plan your trip ahead of time and enjoy substantial savings on accommodation and travel packages.</p>
-          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
-        </div>
-      </div>
-      <!-- Poster 3 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-        <img src="static/media/new1.jpg" alt="Feature 3" class="h-40 w-full object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-bold mb-2">Feature Three</h3>
-          <p class="text-gray-700 mb-4">Monsoon Madness: Special Deals for the Adventurous Souls</p>
-          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
-        </div>
-      </div>
-      <!-- Poster 4 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-        <img src="static/media/new1.jpg" alt="Feature 4" class="h-40 w-full object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-bold mb-2">Feature Four</h3>
-          <strong class="text-gray-700 mb-4">Senior Citizen Special: Honor the Elderly with Extra Savings</strong >
-          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Four Poster Section with Background Image section1-->
-<section class="bg-cover bg-center bg-gray-100 py-12" style="background-image: url('static/media/ne.jpg');">
-  <div class="container mx-auto px-6 md:px-12">
-    <h2 class="text-4xl font-bold text-center text-white mb-12">Retreats: Rejuvenating</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <!-- Poster 1 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-        <img src="static/media/new3.jpg" alt="Feature 1" class="h-40 w-full object-cover">
+<!-- Puja Packages Section -->
+<section class="bg-gray-50 py-16">
+  <div class="container mx-auto px-4 md:px-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Popular Puja Offerings</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      {% for puja in pujas %}
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <img src="{{ puja.image_url }}" alt="{{ puja.name }}" class="h-48 w-full object-cover">
         <div class="p-6">
-          <h3 class="text-2xl font-bold mb-2">Family Package: A Memorable Pilgrimage for Your Loved Ones</h3>
-          <p class="text-gray-700 mb-4">$</p>
+          <h3 class="text-2xl font-semibold mb-2">{{ puja.name }}</h3>
+          <p class="text-gray-700 text-sm mb-4">{{ puja.description }}</p>
           <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
         </div>
       </div>
-      <!-- Poster 2 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-        <img src="static/media/new.jpg" alt="Feature 2" class="h-40 w-full object-cover">
+      {% endfor %}
+
+      <!-- Static Puja Offerings -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <img src="{% static 'media/new.jpg' %}" alt="Ganesh Puja" class="h-48 w-full object-cover">
         <div class="p-6">
-          <h3 class="text-2xl font-bold mb-2">Feature Two</h3>
-          <p class="text-gray-700 mb-4">Pilgrim Loyalty Program: Rewards for Our Devoted Pilgrims</p>
-          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+          <h3 class="text-2xl font-semibold mb-2">Ganesh Puja</h3>
+          <p class="text-gray-700 text-sm mb-4">Invoke Lord Ganesha for wisdom, prosperity, and removal of obstacles.</p>
+          <a href="{% url 'contact' %}" class="text-blue-600 hover:underline">Learn More</a>
         </div>
       </div>
-      <!-- Poster 3 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-        <img src="static/media/new2.jpg" alt="Feature 3" class="h-40 w-full object-cover">
+
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <img src="{% static 'media/new.jpg' %}" alt="Satyanarayan Katha" class="h-48 w-full object-cover">
         <div class="p-6">
-          <h3 class="text-2xl font-bold mb-2">Spiritual Enrichment:</h3>
-          <p class="text-gray-700 mb-4">Book Now and Experience the Divine Bliss of Kedarnath Yatra!</p>
-          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+          <h3 class="text-2xl font-semibold mb-2">Satyanarayan Katha</h3>
+          <p class="text-gray-700 text-sm mb-4">Performed to bring blessings of health and prosperity to the family.</p>
+          <a href="{% url 'contact' %}" class="text-blue-600 hover:underline">Learn More</a>
         </div>
       </div>
-      <!-- Poster 4 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-        <img src="static/media/new.jpg" alt="Feature 4" class="h-40 w-full object-cover">
+
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <img src="{% static 'media/new.jpg' %}" alt="Navgraha Shanti" class="h-48 w-full object-cover">
         <div class="p-6">
-          <h3 class="text-2xl font-bold mb-2">FOur Featured Pilgrimages</h3>
-          <p class="text-gray-700 mb-4">$</p>
-          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
+          <h3 class="text-2xl font-semibold mb-2">Navgraha Shanti</h3>
+          <p class="text-gray-700 text-sm mb-4">Appease planetary deities for peace, prosperity, and protection from doshas.</p>
+          <a href="{% url 'contact' %}" class="text-blue-600 hover:underline">Learn More</a>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 
-<!-- Four Poster Section -->
-<section class="bg-gray-100 py-12">
-  <div class="container mx-auto px-6 md:px-12">
-    <h2 class="text-4xl font-bold text-center mb-12">Spiritual: Enriching</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <!-- Poster 1 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-        <img src="static/media/new.jpg" alt="Feature 1" class="h-40 w-full object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-bold mb-2">Book Your Spiritual Journey Today!</h3>
-          <p class="text-gray-700 mb-4">#</p>
-          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
-        </div>
+<!-- Booking Call-to-Action -->
+<section class="bg-yellow-100 py-12 text-center px-4">
+  <h2 class="text-3xl md:text-4xl font-bold mb-4">📿 Ready to Perform Your Puja?</h2>
+  <p class="text-gray-700 text-lg mb-6">Connect with certified Pandits for all your spiritual needs at your location. Hassle-free, authentic, and customized for every tradition.</p>
+  <a href="{% url 'ne' %}" class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded">Book a Pandit Ji Now</a>
+</section>
+
+<!-- Benefits Section -->
+<section class="bg-white py-16">
+  <div class="container mx-auto px-4 md:px-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Why Book With Us?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-gray-100 p-6 rounded-lg text-center">
+        <i class="fas fa-user-check text-4xl text-blue-600 mb-4"></i>
+        <h4 class="text-xl font-bold mb-2">Verified Pandits</h4>
+        <p class="text-gray-600 text-sm">Only trained and experienced Pandits who specialize in authentic rituals.</p>
       </div>
-      <!-- Poster 2 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-        <img src="static/media/new2.jpg" alt="Feature 2" class="h-40 w-full object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-bold mb-2">Early Bird Offer: Book in Advance and Save Big!</h3>
-          <p class="text-gray-700 mb-4">#</p>
-          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
-        </div>
+      <div class="bg-gray-100 p-6 rounded-lg text-center">
+        <i class="fas fa-map-marked-alt text-4xl text-green-600 mb-4"></i>
+        <h4 class="text-xl font-bold mb-2">Anywhere in India</h4>
+        <p class="text-gray-600 text-sm">Book a Pandit Ji in your city – whether it's a temple, home, or yatra site.</p>
       </div>
-      <!-- Poster 3 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-        <img src="static/media/new3.jpg" alt="Feature 3" class="h-40 w-full object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-bold mb-2">Feature Three</h3>
-          <p class="text-gray-700 mb-4">#</p>
-          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
-        </div>
-      </div>
-      <!-- Poster 4 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-        <img src="static/media/new4.jpg" alt="Feature 4" class="h-40 w-full object-cover">
-        <div class="p-6">
-          <h3 class="text-2xl font-bold mb-2">Discount: Up to 30% off during the monsoon season (July to August)</h3>
-          <p class="text-gray-700 mb-4">$</p>
-          <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
-        </div>
+      <div class="bg-gray-100 p-6 rounded-lg text-center">
+        <i class="fas fa-praying-hands text-4xl text-yellow-500 mb-4"></i>
+        <h4 class="text-xl font-bold mb-2">All Major Pujas</h4>
+        <p class="text-gray-600 text-sm">From Rudrabhishek, Satyanarayan Katha to Navgraha Shanti and more.</p>
       </div>
     </div>
   </div>
 </section>
 
-
-
-<!-- Custom Styles for Scrollbar -->
+<!-- Custom Styles -->
 <style>
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+  @media screen and (max-width: 768px) {
+    h1, h2, h3 {
+      line-height: 1.3;
+    }
   }
-  .scrollbar-hide {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-</style>\
+</style>
 
-{% comment %} <!-- Poster Section with Inline Scrolling and Background Image  lat -->
-<section class="bg-cover bg-center bg-fixed py-12" style="background-image: url('static/media/imag01.jpg.jpg');">
-  <div class="bg-black bg-opacity-50 py-12">
-    <div class="container mx-auto px-6 md:px-12">
-      <h2 class="text-4xl font-bold text-center text-white mb-12">Our Key Features</h2>
-      <div class="flex space-x-8 overflow-x-scroll scrolling-touch scrollbar-hide">
-        <!-- Poster 1 -->
-        <div class="min-w-[300px] bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-          <img src="static/media/new.jpg" alt="Feature 1" class="h-40 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-bold mb-2">Feature One</h3>
-            <p class="text-gray-700 mb-4">Description for feature one. This is a brief description highlighting the main point of the feature.</p>
-            <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <!-- Poster 2 -->
-        <div class="min-w-[300px] bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-          <img src="static/media/new.jpg" alt="Feature 2" class="h-40 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-bold mb-2">Feature Two</h3>
-            <p class="text-gray-700 mb-4">Description for feature two. This is a brief description highlighting the main point of the feature.</p>
-            <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <!-- Poster 3 -->
-        <div class="min-w-[300px] bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-          <img src="static/media/new.jpg" alt="Feature 3" class="h-40 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-bold mb-2">Feature Three</h3>
-            <p class="text-gray-700 mb-4">Description for feature three. This is a brief description highlighting the main point of the feature.</p>
-            <a href="{% url 'ne' %}" class="text-blue-600 hover:underline">Learn More</a>
-          </div>
-        </div> {% endcomment %}
-        {% comment %} <!-- Poster 4 -->
-        <div class="min-w-[300px] bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-          <img src="static/media/feature4.jpg" alt="Feature 4" class="h-40 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-bold mb-2">Feature Four</h3>
-            <p class="text-gray-700 mb-4">Description for feature four. This is a brief description highlighting the main point of the feature.</p>
-            <a href="#" class="text-blue-600 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <!-- Poster 5 -->
-        <div class="min-w-[300px] bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300">
-          <img src="static/media/feature5.jpg" alt="Feature 5" class="h-40 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-bold mb-2">Feature Five</h3>
-            <p class="text-gray-700 mb-4">Description for feature five. This is a brief description highlighting the main point of the feature.</p>
-            <a href="#" class="text-blue-600 hover:underline">Learn More</a>
-          </div>
-        </div> {% endcomment %}
-        <!-- Poster 6 -->
-        
-      {% comment %} </div>
-    </div>
-  </div>
-</section> {% endcomment %}
-
-<!-- Custom Styles for Scrollbar -->
-{% comment %} <style>
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  .scrollbar-hide {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-</style> {% endcomment %}
-
-
-
-
-
-<!-- Enhanced Section -->
-{% comment %} <section class="bg-cover bg-center h-screen text-white" style="background-image: url('static/media/new4.jpg');">
-  <div class="container mx-auto flex items-center justify-center h-full">
-    <div class="bg-black bg-opacity-70 p-8 rounded-lg text-center w-full">
-      <h1 class="text-5xl font-bold mb-8">Discover Our Amazing Features</h1>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Column 1 -->
-        <div class="bg-white bg-opacity-90 p-6 rounded-lg text-black">
-          <div class="h-40 bg-gray-500 rounded mb-4 flex items-center justify-center overflow-hidden">
-            <img src="{% static 'media/new.jpg' %}" alt="Image 1" class="h-full w-full object-cover rounded">
-          </div>
-          <h2 class="text-2xl font-bold mb-2">Column 1</h2>
-          <p class="text-gray-700">Description for column 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
-        </div>
-        <!-- Column 2 -->
-        <div class="bg-white bg-opacity-90 p-6 rounded-lg text-black">
-          <div class="h-40 bg-gray-300 rounded mb-4 flex items-center justify-center overflow-hidden">
-            <img src="static/media/new.jpg" alt="Image 2" class="h-full w-full object-cover rounded">
-          </div>
-          <h2 class="text-2xl font-bold mb-2">Column 2</h2>
-          <p class="text-gray-700">Description for column 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
-        </div>
-        <!-- Column 3 -->
-        <div class="bg-white bg-opacity-90 p-6 rounded-lg text-black">
-          <div class="h-40 bg-gray-300 rounded mb-4 flex items-center justify-center overflow-hidden">
-            <img src="static/media/new.jpg" alt="Image 3" class="h-full w-full object-cover rounded">
-          </div>
-          <h2 class="text-2xl font-bold mb-2">Column 3</h2>
-          <p class="text-gray-700">Description for column 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> {% endcomment %}
-
-
-  {% endblock %}
-
-
-
+{% endblock %}

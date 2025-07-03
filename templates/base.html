@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travel</title>
+  <title>Book Pandit Ji</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   {% comment %} <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> {% endcomment %}
    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -15,7 +15,7 @@
     <div class="container mx-auto flex justify-between items-center">
       <a href="{% url 'home' %}" class="flex items-center">
         <img src="static/media/m.PNG" alt="Brand Logo" class="h-8 mr-2">
-        <span class="text-white text-lg font-semibold">Traveler</span>
+        <span class="text-white text-lg font-semibold">Book Pandit Ji</span>
       </a>
       <div class="hidden md:flex items-center space-x-4">
         <a href="{% url 'home' %}" class="text-white hover:text-gray-200">Home</a>
@@ -61,6 +61,15 @@
   {% endblock Service %}
   {% block ne %}
   {% endblock ne %}
+
+   <!-- Contact Banner -->
+  <section id="book" class="bg-yellow-100 py-12 text-center">
+    <h2 class="text-3xl font-bold mb-2">Ready to Book a Pandit?</h2>
+    <p class="mb-4 text-gray-700">Available for Griha Pravesh, Marriage, Naamkaran, and Festivals.</p>
+    <a href="{% url 'contact' %}" class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-2 px-6 rounded">Book Now</a>
+  </section>
+
+
  <!-- Footer Section -->
  <footer class="bg-cover bg-center bg-no-repeat text-white py-10" style="background-image: url('static/media/location2.jpg');">
   <div class="bg-gray-800 bg-opacity-75 py-10">
@@ -68,9 +77,9 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Company Info -->
         <div class="text-center md:text-left">
-          <h3 class="text-2xl font-bold mb-4">Our Company</h3>
+          <h3 class="text-2xl font-bold mb-4">🔱 Divine Rituals, Delivered with Trust</h3>
           <p class="text-gray-400 mb-4">
-            Access our extensive network of partners and suppliers worldwide, ensuring exclusive access to top destinations, accommodations, and experiences.
+           Book certified Pandit Ji for your sacred ceremonies — authentic Vedic rituals, at your home or temple, with spiritual precision and peace of mind.
           </p>
           <a href="#" class="bg-blue-600 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded">Learn More</a>
         </div>
